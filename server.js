@@ -23,3 +23,16 @@ app.get("/api/notes", (req, res) => {
     res.json(JSON.parse(notesData));
 });
 
+app.post("/api/notes", (req, res) => {
+    const newNote = req.body;
+    newNote.id = uuidv4();
+  
+    const notesData = fs.readFileSync(path.join(__dirname, "db", "db.json"));
+    const notes = JSON.parse(notesData);
+    notes.push(newNote);
+    fs.writeFileSync(path.join(__dirname, "db", "db.json"), JSON.stringify(notes));
+  
+    res.json(newNote);
+});
+
+app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));

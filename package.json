@@ -4,5 +4,16 @@
     "fs": "^0.0.1-security",
     "path": "^0.12.7",
     "uuidv4": "^6.2.13"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "note-taker",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
